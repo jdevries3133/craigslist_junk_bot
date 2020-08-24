@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     'communicator',
     'crawler',
+    'subscriber',
 ]
 
 MIDDLEWARE = [
