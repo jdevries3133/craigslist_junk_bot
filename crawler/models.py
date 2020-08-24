@@ -13,8 +13,8 @@ class ScrapListing(models.Model):
     title = models.CharField(max_length=30)
     description = models.TextField()
     location = models.CharField(max_length=50)  
+    location = models.CharField(max_length=50)  
     scrap_type = models.CharField(max_length=30)
-    conversation = models.OneToOneField("communicator.Coversation", on_delete=models.CASCADE)
 
 class CronScrape(models.Model):
     successful = models.BooleanField()

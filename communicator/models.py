@@ -7,6 +7,7 @@ class Conversation(models.Model):
     """
     seller_name = models.CharField(max_length=50)
     seller_email = models.CharField(max_length=100)
+    listing = models.ForeignKey('crawler.ScrapListing', on_delete=models.CASCADE)
 
 class Message(models.Model):
     """
@@ -15,5 +16,5 @@ class Message(models.Model):
         Bot => Seller "bts"
     """
     seller = models.ForeignKey(Conversation, on_delete=models.CASCADE)
-    type_ = models.CharField(max_length=10)
+    msg_type = models.CharField(max_length=10)
     content = models.TextField()
