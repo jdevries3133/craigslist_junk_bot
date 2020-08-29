@@ -1,23 +1,24 @@
 {% load static %}
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     {% block title %}
     <title>Craigslist Scrap Subscriber</title>
     {% endblock %}
-    <meta name="description" content="Automatically setup nearby scrap metal pickups.">
-    <meta name="author" content="Jack DeVries">
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <meta
+      name="description"
+      content="Automatically setup nearby scrap metal pickups."
+    />
+    <meta name="author" content="Jack DeVries" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
     {% block style %} {% endblock %}
   </head>
 
   <body>
     {% include 'navbar.html'%}
     <h1>Craigslist Scrap Subscriber</h1>
-    {% block content %} {% endblock %}
-    <script src="js/scripts.js"></script>
-    {% block scripts %} {% endblock%}
+    {% block content %} {% endblock %} {% block scripts %} {% endblock%}
   </body>
 </html>

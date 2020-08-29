@@ -7,7 +7,7 @@ from .models import SubscriberProfile, BlacklistWord, GreylistPhrase
 class SubscriberProfileForm(forms.Form):
     query = forms.CharField(label="Your Search Query", max_length=50)
     pickup_label = "How far are you willing to travel to pickup scrap?"
-    pickup_range = forms.IntegerField(label=pickup_label), required=False)
+    pickup_range = forms.IntegerField(label=pickup_label, required=False)
 
 class BlacklistWordForm(forms.ModelForm):
     class Meta:

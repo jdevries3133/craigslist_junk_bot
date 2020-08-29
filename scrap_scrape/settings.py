@@ -61,12 +61,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, module, 'templates')
-            for module in [
-                'crawler',
-                'subscriber',
-                'scrap_scrape',
-            ]
+            os.path.join(BASE_DIR, 'crawler', 'templates'),
+            os.path.join(BASE_DIR, 'scrap_scrape', 'templates'),
+            os.path.join(BASE_DIR, 'subscriber', 'templates')
             
         ],
         'APP_DIRS': True,
@@ -132,3 +129,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'crawler', 'static'),
+    os.path.join(BASE_DIR, 'scrap_scrape', 'static'),
+    os.path.join(BASE_DIR, 'subscriber', 'static')
+]
+

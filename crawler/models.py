@@ -13,8 +13,8 @@ class ScrapListing(models.Model):
     """
     title = models.CharField(max_length=30)
     description = models.TextField()
-    latitude = models.DecimalField(max_digits=7, decimal_places=6)  # gpa lat / lon
-    longitude = models.DecimalField(max_digits=7, decimal_places=6)  # gpa lat / lon
+    latitude = models.DecimalField(max_digits=7, decimal_places=6)
+    longitude = models.DecimalField(max_digits=7, decimal_places=6)
     scrap_type = models.CharField(max_length=30)
 
 
