@@ -90,4 +90,3 @@ if __name__ == '__main__':
         rss_uri=rss_uri
     )
     listings = feed.get_listings()
-    breakpoint()

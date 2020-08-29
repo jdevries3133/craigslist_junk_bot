@@ -34,3 +34,8 @@ If the seller submits the form, it will be stored for five days. If the
 subscriber, or any other subscriber for whom the listing applies, enters the
 range of the seller, it will send the seller a quick email to confirm that
 the scrap is still available, then send the pickup to the subscriber.
+
+# TODO
+
+- Write web forms and views
+- Create REST api for app

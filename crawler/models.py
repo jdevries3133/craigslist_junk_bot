@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.translation import ugettext_lazy as _
 
 class ScrapListing(models.Model):
     """
@@ -12,11 +13,17 @@ class ScrapListing(models.Model):
     """
     title = models.CharField(max_length=30)
     description = models.TextField()
-    location = models.CharField(max_length=50)  
-    location = models.CharField(max_length=50)  
+    latitude = models.DecimalField(max_digits=7, decimal_places=6)  # gpa lat / lon
+    longitude = models.DecimalField(max_digits=7, decimal_places=6)  # gpa lat / lon
     scrap_type = models.CharField(max_length=30)
 
-class CronScrape(models.Model):
+
+class ScrapeReport(models.Model):
+    """
+    Every hour, do a scrape for every user that is logged in. However, also do
+    a scrape when users first checks in.
+    """
     successful = models.BooleanField()
     timestamp = models.DateTimeField(auto_now=True)
     stdout = models.TextField()
+    scrap_type = models.CharField(_("Scrape Type (Check-in-prompted, or cron)"), max_length=50)

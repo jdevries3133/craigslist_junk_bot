@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Subscriber, BlacklistWord, GreylistPhrase
+from .models import SubscriberProfile, BlacklistWord, GreylistPhrase
 
 # Register your models here.
-@admin.register(Subscriber)
+@admin.register(SubscriberProfile)
 class SubscriberAdmin(admin.ModelAdmin):
     pass
 

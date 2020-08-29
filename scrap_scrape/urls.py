@@ -19,8 +19,8 @@ from .views import home
 
 urlpatterns = [
     path('', home),
-    path('', include('communicator.urls')),
     path('', include('crawler.urls')),
+    path('', include('subscriber.urls')),
     path('subscriber/', include('subscriber.urls')),
     path('admin/', admin.site.urls),
 ]

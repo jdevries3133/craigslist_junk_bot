@@ -25,7 +25,7 @@ SECRET_KEY = '$d#jl%dp(1^etz#zn8k_0o%)$0!kgu!c7niz=b9%44c7r&bd%o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'communicator',
+    'rest_framework',
+
+    'api',
     'crawler',
     'subscriber',
 ]
@@ -61,7 +63,6 @@ TEMPLATES = [
         'DIRS': [
             os.path.join(BASE_DIR, module, 'templates')
             for module in [
-                'communicator',
                 'crawler',
                 'subscriber',
                 'scrap_scrape',
