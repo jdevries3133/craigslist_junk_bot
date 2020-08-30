@@ -13,6 +13,7 @@ class SubscriberProfile(models.Model):
     query = models.CharField(max_length=50, default="scrap metal")
     pickup_range = models.IntegerField(_("Pickup Range (miles)"), default=8)
     is_available_for_pickup = models.BooleanField(default=False)
+    is_profile_setup = models.BooleanField(default=False)
 
 
 class BlacklistWord(models.Model):

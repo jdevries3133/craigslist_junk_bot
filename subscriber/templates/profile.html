@@ -1,3 +1,19 @@
-{% extends 'base.html' %} {% block content %} {% csrf_token %}
-<div id="root" />
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1>Set up your Subscriber Profile</h1>
+
+<div class="innerContainer">
+  <form method="post" action="/setup/">
+    {% csrf_token %} {% for field in form %}
+    <div class="formGroup">
+      <label class="formLabel" for="{{ field.name }}">{{field.label}}:</label>
+      <p class="helpText">{{field.help_text}}</p>
+      <br />
+      <div class="inputField">{{field}}</div>
+      <br />
+      <hr />
+      {% endfor %}
+    </div>
+    <button type="submit" class="formSubmit">Submit</button>
+  </form>
+</div>
 {% endblock %}

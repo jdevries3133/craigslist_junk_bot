@@ -11,6 +11,7 @@
       name="description"
       content="Automatically setup nearby scrap metal pickups."
     />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="Jack DeVries" />
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     {% block style %} {% endblock %}
@@ -19,6 +20,7 @@
   <body>
     {% include 'navbar.html'%}
     <h1>Craigslist Scrap Subscriber</h1>
-    {% block content %} {% endblock %} {% block scripts %} {% endblock%}
+    <div class="outerContainer">{% block content %} {% endblock %}</div>
+    {% block scripts %} {% endblock%}
   </body>
 </html>
