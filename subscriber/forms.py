@@ -74,5 +74,21 @@ class ProfileSetupForm(forms.Form):
 
     def save(self, user):
         data = self.cleaned_data
-
+        subscriber = SubscriberProfile.objects.create(
+            user=user,
+            query=(data['query'] if 'query' in data else 'scrap metal'),
+            pickup_range=(data['pickup_range'] if 'pickup_range' in data else 8),
+            is_profile_setup=True
+        )
+        for word in data['blacklist_words']:
+            BlacklistWord.objects.create(
+                subscriber=subscriber,
+                word=word
+            )
+        for phrase in data['greylist_phrases']:
+            GreylistPhrase.objects.create(
+                subscriber=subscriber,
+                phrase=phrase,
+                qset_threshold=data['qset_threshold']
+            )
 

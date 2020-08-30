@@ -20,8 +20,14 @@ class BlacklistWord(models.Model):
     subscriber = models.ForeignKey(SubscriberProfile, on_delete=models.CASCADE)
     word = models.CharField(max_length=30)
 
+    def __str__(self):
+        return self.word
+
 
 class GreylistPhrase(models.Model):
     subscriber = models.ForeignKey(SubscriberProfile, on_delete=models.CASCADE)
     phrase = models.CharField(max_length=100)
     qset_threshold = models.IntegerField(default=60)
+
+    def __str__(self):
+        return self.phrase
